@@ -1,0 +1,84 @@
+---
+title: "导论"
+author: "Jin"
+date: '2019-04-15'
+institute: 中南财经政法大学统计与数学学院
+csl: ./style/chinese-gb7714-2005-numeric.csl
+css: ./style/markdown.css
+bibliography: [./Bibfile.bib]
+notice: '@*'
+eqnPrefixTemplate: ($$i$$)
+link-citations: true
+linkReferences: true
+chapters: true
+tableEqns: false
+autoEqnLabels: false
+classoption: "aspectratio=1610"
+---
+
+```{r setup, echo=F, purl=F}
+
+################# 第 1 章 R 程序代码  ####################
+
+
+knitr::opts_knit$set(root.dir = getwd())
+knitr::opts_chunk$set(echo = FALSE, results = 'hide')
+knitr::opts_chunk$set(warning = FALSE, message=FALSE)
+knitr::opts_chunk$set(fig.align="center"
+                      ## ,out.width="0.9\\textwidth" # latex
+                      ,out.width="60%" # for both latex and html
+                      ,fig.width=5, fig.height=3
+                      )
+```
+
+```{r prepare, echo=F, purl=F}
+rm(list=ls())
+options(digits=4)
+options(scipen=100)
+graphics.off()
+Sys.setlocale("LC_ALL", "Chinese")
+```
+
+
+\cleardoublepage
+\pagestyle{emptypage}
+\renewcommand{\chapterlabel}{导论}
+
+# 导论 {-}
+
+### 研究背景和意义
+
+#### 研究背景
+
+黄金兼具商品、货币以及投资属性，在国际金融市场上是一种常用的避险工具，并逐步演变为一种社会公认的
+价值判断标准，其资产储备和投资增值的价值远大于纸币和其他商品，其储存量也代表了国家的实力，是稳
+定市场经济、抵挡通胀的重要后盾^[市场投资者越担忧通货膨胀的发生，黄金市场将越受青睐。例如，2008年
+金价创下历史新高，商品价格的上涨与通货膨胀率成正比关系，当参与者持有的现金所产生的利息无法跟上
+价格的上涨速度，黄金就是避风港。]，也成为大众参与者稳定资金、预防通胀的常用手段，而其他商品及货
+币不具有在异常时段的避险功能。
+
+### 国内外研究现状述评
+
+#### 黄金期货市场风险测度研究综述
+
+1.国外关于黄金期货市场风险测度的研究现状
+
+Baklaci等人（2016）发现新兴市场仍然是一个尚未开发的领域，而大多数样本国家的黄金
+期货存在波动传递，新兴黄金期货市场的风险分散和跨市场对冲^[当持有黄金的需求增加时，
+黄金价格将迎来飙升。所以，金价基本上与股票、债券市场的价格相反，黄金是一种很好的
+对冲工具。]机会非有限[@Baklaci2016]。
+
+2.国内关于黄金期货市场风险测度的研究现状
+
+由于2008年中国才推出黄金期货的市场，时间相比于比国外较晚，国内学者对此研究有一定
+的局限性，所使用模型主流为传统的GARCH族模型，模型普遍较为简单，分析方向多集中于
+与其他金融市场的联动分析和溢出效益等。王安羽（2011）利用GARCH族模型拟合波动性，
+并对GARCH类对波动率的不同模拟做优劣对比。结果证实不对称的GARCH模型为最优模型，对
+中国投资者的市场风险度量VaR和预测具有一定的作用[@王安羽2011]。
+
+
+\pagestyle{mpage}
+
+<!-- # 参考文献 -->
+[//]: # (\bibliography{Bibfile})
+

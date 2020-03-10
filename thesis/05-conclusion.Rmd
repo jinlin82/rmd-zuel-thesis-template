@@ -1,0 +1,59 @@
+---
+title: "结论"
+author: "Jin"
+date: '2019-04-15'
+institute: 中南财经政法大学统计与数学学院
+csl: ./style/chinese-gb7714-2005-numeric.csl
+css: ./style/markdown.css
+bibliography: [./Bibfile.bib]
+notice: '@*'
+eqnPrefixTemplate: ($$i$$)
+link-citations: true
+linkReferences: true
+chapters: true
+tableEqns: false
+autoEqnLabels: false
+classoption: "aspectratio=1610"
+---
+
+```{r setup, echo=F, purl=F}
+
+################# 第 5 章 R 程序代码  ####################
+
+knitr::opts_knit$set(root.dir = getwd())
+knitr::opts_chunk$set(echo = FALSE, results = 'hide')
+knitr::opts_chunk$set(warning = FALSE, message=FALSE)
+knitr::opts_chunk$set(fig.align="center"
+                      ## ,out.width="0.9\\textwidth" # latex
+                      ,out.width="60%" # for both latex and html
+                      ,fig.width=5, fig.height=3
+                      )
+```
+
+```{r prepare, echo=F, purl=F}
+rm(list=ls())
+options(digits=4)
+options(scipen=100)
+graphics.off()
+Sys.setlocale("LC_ALL", "Chinese")
+```
+
+\cleardoublepage
+\pagestyle{emptypage}
+\renewcommand{\chapterlabel}{结论与展望}
+
+# 结论与展望 {-}
+
+### 一、结论  {-}
+
+波动性是金融时序最关键的特征之一，也是投资者和企业以及政府行使决策的关键影响因素之一。
+
+
+### 二、不足与展望  {-}
+
+在研究过程中不可避免地存在缺陷和遗憾，有必要更进一步的研究和改进：
+
+
+<!-- # 参考文献 {-} -->
+[//]: # (\bibliography{Bibfile})
+

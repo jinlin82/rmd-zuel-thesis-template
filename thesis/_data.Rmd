@@ -1,0 +1,14 @@
+\chapter{原始数据}
+
+```{r, echo=F, results='markup', warning = FALSE, message=FALSE}
+dat1 <- read.csv("./data/test.csv")
+library("kableExtra")
+kable(dat1, format="latex", row.names =T, align = c("r", "r", "r", "r"),
+             caption="附录数据测试表",digits = 4,
+             longtable = TRUE, booktabs = TRUE, escape = F) %>%
+    kable_styling(latex_options = c("striped", "scale_down", "repeat_header", "hold_position"),
+                  ## stripe_index = rep(1:5, 4)+rep(c(0,10,20,30), each = 5),
+                  repeat_header_text = "(续)")%>%
+    kable_styling(full_width = T) %>%
+    column_spec(1, width = c("4.5cm"))
+```

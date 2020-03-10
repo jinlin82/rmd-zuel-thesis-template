@@ -1,0 +1,53 @@
+---
+title: "第 3 章"
+author: "Jin"
+date: '2019-04-15'
+institute: 中南财经政法大学统计与数学学院
+csl: ./style/chinese-gb7714-2005-numeric.csl
+css: ./style/markdown.css
+bibliography: [./Bibfile.bib]
+notice: '@*'
+eqnPrefixTemplate: ($$i$$)
+link-citations: true
+linkReferences: true
+chapters: true
+tableEqns: false
+autoEqnLabels: false
+classoption: "aspectratio=1610"
+---
+
+```{r setup, echo=F, purl=F}
+
+################# 第 3 章 R 程序代码  ####################
+
+knitr::opts_knit$set(root.dir = getwd())
+knitr::opts_chunk$set(echo = FALSE, results = 'hide')
+knitr::opts_chunk$set(warning = FALSE, message=FALSE)
+knitr::opts_chunk$set(fig.align="center"
+                      ## ,out.width="0.9\\textwidth" # latex
+                      ,out.width="60%" # for both latex and html
+                      ,fig.width=5, fig.height=3
+                      )
+```
+
+```{r prepare, echo=F, purl=F}
+rm(list=ls())
+options(digits=4)
+options(scipen=100)
+graphics.off()
+Sys.setlocale("LC_ALL", "Chinese")
+```
+
+
+# 基于 GAS 模型的黄金期货收益率建模
+
+## 数据来源
+
+### 数据选取及意义
+
+不同于国外期货的选取，以最近月份的期货合约逐日交易的收盘价为基础，因为期货合约是有生命周期的，合约在
+最后一个交易日将会平仓终止买卖。
+
+
+<!--# 参考文献 {-}-->
+[//]: # (\bibliography{Bibfile})
