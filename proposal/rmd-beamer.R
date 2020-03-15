@@ -1,5 +1,5 @@
 args<-commandArgs(trailingOnly = TRUE)
-if(grepl(".rmd", args[1], ignore.case=T)) args[1] <- substr(args[1], 1, nchar(args[1])-4)
+if(grepl("\\.rmd$", args[1], ignore.case=T)) args[1] <- substr(args[1], 1, nchar(args[1])-4)
 
 if (file.exists(paste(args[1], ".rmd", sep="")))
 {library("knitr")
