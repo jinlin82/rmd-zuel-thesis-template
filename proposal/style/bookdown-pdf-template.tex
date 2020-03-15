@@ -2,6 +2,7 @@
 \documentclass[doctor,twoside,chapterhead,otf]{znufethesis}
 %\usepackage{gbt7714}
 
+
 %======================== 根据选项设置代码处理方式 RMARKDOWN 中独有=============
 $if(listings)$
 \usepackage{listings}
@@ -70,12 +71,14 @@ $endif$
 
 %% ===============================================================
 \begin{document}
-
+\phantomsection %
+\pdfbookmark{封面}{cover}
+\IfFileExists{./misc/cover.pdf}{\includepdf[pages=-]{./misc/cover}}{
 $if(title)$
 \maketitle
-$endif$
-\blankpage
+$endif$}
 
+\blankpage
 
 $for(include-before)$
 $include-before$

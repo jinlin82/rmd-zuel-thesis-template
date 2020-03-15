@@ -41,8 +41,7 @@ process_tangle.block <- function (x) {
                              process_tangle.block,
                              ns="knitr")
     
-    knitr::purl(input=paste(args[1], ".rmd", sep=""), encoding="utf-8")
-
+    knitr::purl(input=paste(args[1], ".rmd", sep=""), output=paste(args[1], ".R", sep=""), encoding="utf-8")
 # New processing functions
 process_tangle <- function (x) { 
     UseMethod("process_tangle", x)

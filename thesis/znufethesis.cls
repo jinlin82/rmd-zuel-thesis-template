@@ -137,6 +137,7 @@
 \RequirePackage{wrapfig}
 \RequirePackage{colortbl}
 \RequirePackage{pdflscape}
+\RequirePackage{pdfpages}
 \RequirePackage{tabu}
 \RequirePackage{threeparttable}
 \RequirePackage{threeparttablex}
