@@ -1,7 +1,7 @@
 @echo off
 set _SCRIPT_PATH=%~p0
 
-if not exist .\misc\cover.pdf (officetopdf.exe .\misc\cover.docx .\misc\cover.pdf)
+if exist officetopdf.exe (if not exist .\misc\cover.pdf (officetopdf.exe .\misc\cover.docx .\misc\cover.pdf))
 
 Rscript %_SCRIPT_PATH%\bookdown-pdf.R %1
 
