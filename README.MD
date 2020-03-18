@@ -76,8 +76,7 @@
 10. `znufelogo.jpg`即生成幻灯片时的Logo。
 11. `znufethesis.cls`是用来控制论文模板的核心格式，不要动
 12. `_data.Rmd`用于设置论文中原始数据部分，`index.Rmd`用于设置论文格式，这两个文件**名称不能改变**
-13. `01-intro.Rmd`、`02-model.Rmd`、`04-aqi-des.Rmd`、`05-conclusion.Rmd`用于撰
-    写正文内容，`01-`、`02-`等序号不能变动，后面的英文可以更改，自己命名。也就是说正文rmd文档名称必须以序号开头。
+13. `01-intro.Rmd`、`02-model.Rmd`、`04-aqi-des.Rmd`、`05-conclusion.Rmd`用于撰写正文内容，`01-`、`02-`等序号不能变动，后面的英文可以更改，自己命名。也就是说正文rmd文档名称必须以序号开头。
 14. `_book`存放生成的论文pdf等文件。
 
 # thesis结构及修改说明
@@ -95,7 +94,7 @@
    \lstinputlisting[caption= Python 程序代码, language=Python]{./codes/02-model.py}
    \lstinputlisting[caption= Python 程序代码, language=Python]{./codes/03-estimation.py}
    ```
-   - 展示R代码：复制下面的语句，将下面的`03-estimation`改为需要展示的python代码所在的章节rmd名称，如`04-aqi-des`
+   - 展示R代码：复制下面的语句，将下面的`03-estimation`改为需要展示的R代码所在的章节rmd名称，如`04-aqi-des`
    ```
    \lstinputlisting{./codes/03-estimation.R}
    \lstinputlisting{./codes/04-aqi-des.R}
@@ -109,7 +108,7 @@
 # thesis使用方法
  1. 克隆项目`rmd-zuel-thesis-template`到电脑文件夹中
  2. 将该项目作为模板存放，新建一个文件夹如`s-thesis`,将`rmd-zuel-thesis-template`中的两个子文件夹`proposal`、`thesis`复制到`s-thesis`文件夹中。
- 3. `bookdown-pdf.bat`、`bookdown-pdf.R`用于输出pdf,在子文件夹`thesis`文件夹中双击`bookdown-pdf.bat`运行可生成pdf；或者用vscode打开自己建的文件夹如`s-thesis`,任意点击一个编辑的正文rmd文件如`01-intro.Rmd`,按下快捷键`ctrl+p`,在弹出的窗口中输入`task rmd`,选择`bookdown-pdf`，生成论文pdf文件。
+ 3. `bookdown-pdf.bat`、`bookdown-pdf.R`用于输出pdf,在子文件夹`thesis`文件夹中双击`bookdown-pdf.bat`运行可生成pdf；或者用vscode打开自己建的文件夹如`s-thesis`,任意点击一个编辑的正文rmd文件如`01-intro.Rmd`,按下快捷键`ctrl+p`,在弹出的窗口中输入`task `(task后加一个空格),选择`bookdown-pdf`，生成论文pdf文件。
  4. 运行后会自动生成`-book`文件夹，存放pdf等文件。
 
     **注**：生成pdf有以下先决条件：
