@@ -1,3 +1,14 @@
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [rmd-zuel-thesis-template介绍](#rmd-zuel-thesis-template介绍)
+- [`thesis`文件夹详细说明](#thesis文件夹详细说明)
+- [thesis结构及修改说明](#thesis结构及修改说明)
+- [thesis使用方法](#thesis使用方法)
+
+<!-- markdown-toc end -->
+
+
 # rmd-zuel-thesis-template介绍
 该项目是一个论文模板,其主要文件结构为
 
@@ -115,8 +126,4 @@
     - 借助于R,R程序环境变量(`C:\Worktools\R\R-3.5.1\bin\x64`)要设置成功
     - `officetopdf.exe`放在bat文件夹中，worktools的bat文件在环境变量里(`C:\Worktools\bat`)
     - office中`word软件`发挥作用
-
-
-
-
 
