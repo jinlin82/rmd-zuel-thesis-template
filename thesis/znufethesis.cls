@@ -323,12 +323,12 @@
         \ifistwoside
         {
           \ifodd \value{page} % 奇数页
-          {基于GAS模型的黄金期货市场风险测度研究}
+          {\@title}
           \else % 偶数页
           \chaptertitle \fi
         }
         \else
-        {基于GAS模型的黄金期货市场风险测度研究}\fi
+        {\@title}\fi
         \else %标题不作为页眉
         \chaptertitle\fi}
       \fi
@@ -352,7 +352,7 @@
         \ifistwoside
         {
           \ifodd \value{page} % 奇数页
-          基于GAS模型的黄金期货市场风险测度研究
+         \@title 
           \else % 偶数页
           %{第\thechapter 章\hspace{1em}\chaptertitle} \fi
 	   {第\CJKnumber{\thechapter}章\hspace{1em}\chaptertitle} \fi        % 学校格式要求
@@ -360,7 +360,8 @@
         \else
         {第\thechapter 章\hspace{1em}\chaptertitle}\fi
         \else %标题不作为页眉
-        基于GAS模型的黄金期货市场风险测度研究\fi}
+	\@title
+	\fi}
       \fi
     }
   }{}
@@ -382,14 +383,14 @@
         \ifistwoside
         {
           \ifodd \value{page} % 奇数页
-          基于GAS模型的黄金期货市场风险测度研究
+          \@title
           \else % 偶数页
           {附录\thechapter\hspace{1em}\chaptertitle}\fi
         }
         \else
         {附录\thechapter\hspace{1em}\chaptertitle}\fi
         \else %标题不作为页眉
-        基于GAS模型的黄金期货市场风险测度研究\fi}
+        \@title\fi}
       \fi
     }
   }{}
@@ -411,14 +412,14 @@
         \ifistwoside
         {
           \ifodd \value{page} % 奇数页
-          基于GAS模型的黄金期货市场风险测度研究
+          \@title
           \else % 偶数页
           {\chapterlabel}\fi
         }
         \else
         {\chapterlabel}\fi
         \else %标题不作为页眉
-        基于GAS模型的黄金期货市场风险测度研究\fi}
+        \@title\fi}
       \fi
     }
   }{}
@@ -481,7 +482,7 @@
     Dissertation for the Degree of Doctor of Philosophy
 
     \vskip 30pt
-    \kaishu \bfseries \yihao 基于GAS模型的黄金期货市场风险测度研究\\
+    \kaishu \bfseries \yihao \@title\\
     \rmfamily\bf \xiaoer Semiparametric Regression Model and \\[-1ex]
     Its Application
     \vskip 30pt
