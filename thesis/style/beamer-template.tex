@@ -1,4 +1,4 @@
-\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$babel-lang$,$endif$$if(handout)$handout,$endif$$if(beamer)$ignorenonframetext,11pt,xcolor=dvipsnames,hyperref={bookmarksdepth=4},$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$babel-lang$,$endif$$if(handout)$handout,$endif$$if(beamer)$ignorenonframetext,11pt,xcolor=dvipsnames,hyperref={colorlinks,allcolors=.,urlcolor=blue, citecolor=violet, bookmarksdepth=4},$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
 \setbeamertemplate{caption}[numbered]
 \setbeamertemplate{caption label separator}{: }
 \setbeamercolor{caption name}{fg=normal text.fg}
@@ -85,17 +85,21 @@ $for(polyglossia-otherlangs)$
 $endfor$
 \fi
 $endif$
-\newif\ifbibliography
-$if(natbib)$
-\usepackage{natbib}
-\bibliographystyle{$if(biblio-style)$$biblio-style$$else$plainnat$endif$}
-$endif$
-$if(biblatex)$
-\usepackage[$if(biblio-style)$style=$biblio-style$,$endif$$for(biblatexoptions)$$biblatexoptions$$sep$,$endfor$]{biblatex}
-$for(bibliography)$
-\addbibresource{$bibliography$}
-$endfor$
-$endif$
+
+%\newif\ifbibliography
+
+%$if(natbib)$
+%\usepackage{natbib}
+%\bibliographystyle{$if(biblio-style)$$biblio-style$$else$plainnat$endif$}
+%$endif$
+
+%$if(biblatex)$
+%\usepackage[$if(biblio-style)$style=$biblio-style$,$endif$$for(biblatexoptions)$$biblatexoptions$$sep$,$endfor$]{biblatex}
+%$for(bibliography)$
+%\addbibresource{$bibliography$}
+%$endfor$
+%$endif$
+
 $if(verbatim-in-note)$
 \usepackage{fancyvrb}
 $endif$
@@ -283,6 +287,12 @@ $endif$
 %\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
 
 
+%% 参考文献
+\usepackage{gbt7714}
+\usepackage{natbib}
+\setlength{\bibsep}{2pt}
+
+
 \usepackage[utf8]{inputenc}
 % Package fontenc omitted
 % Package fixltx2e omitted
@@ -407,7 +417,8 @@ $else$
 $endif$
 $endif$
 \begin{frame}[allowframebreaks]{$biblio-title$}
-\bibliographytrue
+\footnotesize\CJKfamily{song}
+%\bibliographytrue
 \bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
 \end{frame}
 
@@ -415,7 +426,8 @@ $endif$
 $endif$
 $if(biblatex)$
 \begin{frame}[allowframebreaks]{$biblio-title$}
-\bibliographytrue
+\footnotesize\CJKfamily{song}
+%\bibliographytrue
 \printbibliography[heading=none]
 \end{frame}
 
