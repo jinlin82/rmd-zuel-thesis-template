@@ -111,7 +111,8 @@
    \lstinputlisting{./codes/04-aqi-des.R}
    ```
 
-9.  **原始数据**:在`_data.Rmd`修改,按照rmarkdown插入表格的格式修改，原始数据要存放在`data`文件夹中。
+9.  **原始数据**:在`_data.Rmd`修改,按照rmarkdown插入表格的格式修改，原始数据要存
+    放在`data`文件夹中。`\misc\data.tex` 是自动生成的，所以不要push到库中
 10. **致谢**:在`misc`文件夹中`ack.tex`中修改。
 
 
