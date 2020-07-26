@@ -67,8 +67,6 @@ bookdown::gitbook:
     edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
     download: ["pdf", "epub"]
 bookdown::pdf_book:
-  includes:
-    after_body: backmatters.tex
   keep_tex: yes
   toc: true
   toc_depth: 3
