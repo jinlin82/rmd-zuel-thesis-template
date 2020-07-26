@@ -1,5 +1,5 @@
 ---
-title: "结论"
+title: "中南财经政法大学硕士论文Rmarkdown模板"
 author: "Jin"
 date: '2019-04-15'
 institute: 中南财经政法大学统计与数学学院

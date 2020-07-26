@@ -121,6 +121,7 @@
  2. 将该项目作为模板存放，新建一个文件夹如`s-thesis`,将`rmd-zuel-thesis-template`中的两个子文件夹`proposal`、`thesis`复制到`s-thesis`文件夹中。
  3. `bookdown-pdf.bat`、`bookdown-pdf.R`用于输出pdf,在子文件夹`thesis`文件夹中双击`bookdown-pdf.bat`运行可生成pdf；或者用vscode打开自己建的文件夹如`s-thesis`,任意点击一个编辑的正文rmd文件如`01-intro.Rmd`,按下快捷键`ctrl+p`,在弹出的窗口中输入`task `(task后加一个空格),选择`bookdown-pdf`，生成论文pdf文件。
  4. 运行后会自动生成`-book`文件夹，存放pdf等文件。
+ 5. **论文标题**： 在 `cover.docx`, `index.rmd`和最后一个 rmd 文件中的title（页眉标题由此控制） 熟悉应一致为论文标题
 
     **注**：生成pdf有以下先决条件：
     - 借助于R,R程序环境变量(`C:\Worktools\R\R-3.5.1\bin\x64`)要设置成功
