@@ -41,6 +41,7 @@ Sys.setlocale("LC_ALL", "Chinese")
 
 
 # 黄金期货市场及价格波动风险研究基础
+\pagestyle{mpage}
 
 ## 黄金期货市场风险的影响因素
 
