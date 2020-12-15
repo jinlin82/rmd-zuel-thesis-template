@@ -252,10 +252,6 @@ $if(date)$
 \date{$date$}
 $endif$
 
-
-
-
-
 \renewcommand{\contentsname}{\centerline{\textcolor{violet}{目 \ \ 录}}}    % 将Contents改为目录
 \renewcommand{\abstractname}{摘 \ \ 要}      % 将Abstract改为摘要
 \renewcommand{\refname}{参考文献}            % 将Reference改为参考文献
@@ -264,12 +260,12 @@ $endif$
 \renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
 
 \PassOptionsToPackage{dvipsnames}{xcolor}
-\PassOptionsToPackage{colorlinks=true,citecolor=blue, urlcolor=blue, linkcolor=violet, bookmarksdepth=4}{hyperref}
+\PassOptionsToPackage{colorlinks=true,citecolor=blue, urlcolor=blue, linkcolor=violet, bookmarksdepth=4,bookmarksopen=true,bookmarksopenlevel=2}{hyperref}
 
 \usepackage{lscape}
 \usepackage{indentfirst}
 \usepackage{textcomp}                      % provide many text symbols
-\usepackage{setspace}                      % 各种间距设置
+% \usepackage{setspace}                    % 各种间距设置 %% 不能出现在 beamer-template中,否则footnote出现错误
 
 
 % ---------------------------------Table------------------------------
@@ -380,7 +376,7 @@ $endif$
 
 
 $if(title)$
-\title{$title$}
+\title{$title$$if(thanks)$\thanks{$thanks$}$endif$}
 $endif$
 $if(subtitle)$
 \subtitle{$subtitle$}
@@ -400,7 +396,7 @@ $include-before$
 
 $endfor$
 $if(toc)$
-\begin{frame}
+\begin{frame}{\textcolor{violet}{\normalfont\Large \CJKfamily{kai}大\ \ 纲 }} \textcolor{violet}{}
 \tableofcontents[hideallsubsections]
 \end{frame}
 
@@ -411,11 +407,17 @@ $if(natbib)$
 $if(bibliography)$
 $if(biblio-title)$
 $if(book-class)$
+
 \renewcommand\bibname{$biblio-title$}
+\begin{frame}[allowframebreaks]{$biblio-title$}
+\footnotesize\CJKfamily{song}
+%\bibliographytrue
+\bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
+\end{frame}
+
 $else$
+
 \renewcommand\refname{$biblio-title$}
-$endif$
-$endif$
 \begin{frame}[allowframebreaks]{$biblio-title$}
 \footnotesize\CJKfamily{song}
 %\bibliographytrue
@@ -424,18 +426,21 @@ $endif$
 
 $endif$
 $endif$
+$endif$
+$endif$
+
 $if(biblatex)$
 \begin{frame}[allowframebreaks]{$biblio-title$}
 \footnotesize\CJKfamily{song}
 %\bibliographytrue
 \printbibliography[heading=none]
 \end{frame}
-
 $endif$
+
 $for(include-after)$
 $include-after$
-
 $endfor$
+
 \end{document}
 
 
