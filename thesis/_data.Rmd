@@ -1,6 +1,6 @@
-\chapter{原始数据}
+\chapter{原始数据}  %%% 如不需要附上原始数据,则把改行用 tex 注释符号 %%% 注释掉, 并把下面代码块增加 eval=F,
 
-```{r, echo=F, results='markup', warning = FALSE, message=FALSE}
+```{r, echo=F, eval=F, results='markup', warning = FALSE, message=FALSE}
 dat1 <- read.csv("./data/test.csv")
 library("kableExtra")
 kable(dat1, format="latex", row.names =T, align = c("r", "r", "r", "r"),
