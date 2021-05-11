@@ -726,7 +726,7 @@
 
   \list{\@biblabel{\@arabic\c@enumiv}}%
   {\renewcommand{\makelabel}[1]{##1\hfill}
-    \settowidth\labelwidth{1.1cm}
+    \settowidth\labelwidth{0cm}  %默认值为1.1cm，跟word比较宽
     \setlength{\labelsep}{0.4em}
     \setlength{\itemindent}{0pt}
     \setlength{\leftmargin}{\labelwidth+\labelsep}
