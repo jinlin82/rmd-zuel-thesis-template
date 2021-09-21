@@ -252,13 +252,6 @@ $if(date)$
 \date{$date$}
 $endif$
 
-\renewcommand{\contentsname}{\centerline{\textcolor{violet}{目 \ \ 录}}}    % 将Contents改为目录
-\renewcommand{\abstractname}{摘 \ \ 要}      % 将Abstract改为摘要
-\renewcommand{\refname}{参考文献}            % 将Reference改为参考文献
-\renewcommand\tablename{表}
-\renewcommand\figurename{图}
-\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
-
 \PassOptionsToPackage{dvipsnames}{xcolor}
 \PassOptionsToPackage{colorlinks=true,citecolor=blue, urlcolor=blue, linkcolor=violet, bookmarksdepth=4,bookmarksopen=true,bookmarksopenlevel=2}{hyperref}
 
@@ -385,6 +378,21 @@ $endif$
 $for(header-includes)$
 $header-includes$
 $endfor$
+
+\AtBeginDocument{%
+\renewcommand{\contentsname}{\centerline{\textcolor{violet}{目 \ \ 录}}}    % 将Contents改为目录
+\renewcommand{\abstractname}{摘 \ \ 要}      % 将Abstract改为摘要
+\renewcommand{\refname}{参考文献}            % 将Reference改为参考文献
+\renewcommand\tablename{表}
+\renewcommand\figurename{图}
+\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
+
+\usepackage[skip=0pt, labelsep=quad, labelfont={color={Violet}}]{caption}
+
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\arabic{table}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+}
 
 \begin{document}
 $if(title)$

@@ -13,4 +13,4 @@ if exist %var:~0,-5%.docx (ren %var:~0,-5%.docx %file_name%.bak.docx)
 
 Rscript %_SCRIPT_DRIVE%%_SCRIPT_PATH%rmd-doc.R %1
 
-if exist %var%.docx (start %var%.docx) else (start %var:~0,-5%.docx)
+if exist %var%.docx (start %var%.docx) else (start %var:~0,-4%.docx)

@@ -83,7 +83,7 @@ process_tangle.block <- function (x) {
 
     rmarkdown::render(input=paste(args[1], ".rmd", sep=""), 
 		      output_format="beamer_presentation",
-		      output_file=paste(args[1], "_beamer.pdf", sep=""),
+		      output_file=paste(tail(unlist(strsplit(args[1],"\\", fixed=TRUE)),1), "_beamer.pdf", sep=""),
 		      encoding="utf-8")
 }else{
     rmarkdown::render(input=paste(args[1], ".md", sep=""), output_format="beamer_presentation",

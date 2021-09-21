@@ -9,7 +9,7 @@ bookdown::html_document2:
   - pandoc-crossref
   - -M
   - eqnPrefix=
-  seq_numbering: true 
+  global_numbering: true
   toc: true
 bookdown::pdf_document2:
   keep_tex: true
@@ -27,10 +27,12 @@ slidy_presentation:
 bookdown::word_document2:
   fig_caption: true
   md_extensions: +east_asian_line_breaks
+  number_sections: false  
   pandoc_args:
   - --filter
   - pandoc-crossref
   reference_docx: ./style/word-styles-02.docx
+  global_numbering: true
 ioslides_presentation:
   highlight: haddock
   slide_level: 3
