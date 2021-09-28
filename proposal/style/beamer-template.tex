@@ -259,7 +259,7 @@ $endif$
 \usepackage{indentfirst}
 \usepackage{textcomp}                      % provide many text symbols
 % \usepackage{setspace}                    % 各种间距设置 %% 不能出现在 beamer-template中,否则footnote出现错误
-
+\usepackage{ragged2e}                      % 提供 \justifying 命令
 
 % ---------------------------------Table------------------------------
 \usepackage{booktabs}
@@ -335,6 +335,10 @@ $endif$
 
 \usetheme{default}
 \useinnertheme[shadow]{rounded}
+\setbeamerfont{item projected}{family=\fontspec{Microsoft YaHei}}
+\setbeamercolor{item projected}{fg=White}
+\setbeamerfont{section number projected}{family=\fontspec{Microsoft YaHei}}
+\setbeamercolor{section number projected}{fg=White}
 \useoutertheme{infolines}
 \usecolortheme{seahorse}
 \setbeamercolor{frametitle}{fg=Blue, bg=white}
@@ -393,6 +397,7 @@ $endfor$
 \renewcommand{\thetable}{\arabic{table}}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 }
+
 
 \begin{document}
 $if(title)$
