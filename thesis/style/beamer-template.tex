@@ -369,7 +369,10 @@ $endif$
 \end{frame}
 }
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
-\everydisplay{\color{blue}}
+
+% \everydisplay{\color{blue}} % 和 align 环境冲突， 改用下面语句
+% \setbeamercolor{math text inlined}{fg=blue}
+\setbeamercolor{math text displayed}{fg=blue}
 
 
 $if(title)$
