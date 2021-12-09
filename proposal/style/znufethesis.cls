@@ -988,14 +988,18 @@
 \renewcommand\lstlistlistingname{程序目录}
 \renewcommand\lstlistingname{程序}
 
+
 % 配置Lstlisting
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
 
+\setmonofont{Consolas} % listings 中支持 consolas 字体，必需配合上面\usepackage{fontenc} 中不出现[T1]才可以
+
+\makeatletter
 \lstset{
   language=R,
-  basicstyle=\footnotesize\ttfamily,
+  basicstyle=\lst@ifdisplaystyle\footnotesize\fi\ttfamily,
   commentstyle=\ttfamily\color{dkgreen}, % 评论颜色,打印时使用black
   numbers=left,
   numberstyle=\ttfamily\color{gray},  % the style that is used for the line-numbers,
@@ -1011,12 +1015,22 @@
   breaklines=true,
   breakatwhitespace=false,
   caption=R 程序代码,
+  upquote=true, % get straight single quotes in listings
   escapeinside={},
-  keywordstyle=\color{blue}\ttfamily,
+  keywordstyle=\lst@ifdisplaystyle\color{blue}\fi\ttfamily,
   stringstyle=\color{purple}\ttfamily,
   morekeywords={},
   xleftmargin=2em, xrightmargin=0em, aboveskip=1em, belowskip=2em,
 }
+\makeatother
+
+%%% get straight double quotes in listings?
+\makeatletter
+\lst@CCPutMacro
+    \lst@ProcessOther {"22}{\lst@ifupquote \textquotedbl
+                                     \else \char34\relax \fi}
+    \@empty\z@\@empty
+\makeatother
 
 % 配置算法包
 \algsetup{indent=3em}

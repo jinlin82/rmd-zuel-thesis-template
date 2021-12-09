@@ -303,6 +303,7 @@ $endif$
 						   
 \setmonofont{Consolas} % listings 中支持 consolas 字体，必需配合上面usepackage{fontenc} 中不出现[T1]才可以
 
+\makeatletter
 \lstset{numbers=left, numberstyle=\ttfamily\tiny\color{Gray}, stepnumber=1, numbersep=8pt,
   frame=leftline,
   framexleftmargin=0mm,
@@ -328,6 +329,16 @@ $endif$
   morecomment=[s]{\#}{\#},
   commentstyle=\color{OliveGreen!60}\scriptsize,
   tabsize=4}
+\makeatother
+  
+  
+%%% get straight double quotes in listings?
+\makeatletter
+\lst@CCPutMacro
+    \lst@ProcessOther {"22}{\lst@ifupquote \textquotedbl
+                                     \else \char34\relax \fi}
+    \@empty\z@\@empty
+\makeatother
 
 \tolerance=1000
 \usetheme{default}
@@ -369,7 +380,10 @@ $endif$
 \end{frame}
 }
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
-\everydisplay{\color{blue}}
+
+% \everydisplay{\color{blue}} % 和 align 环境冲突， 改用下面语句
+% \setbeamercolor{math text inlined}{fg=blue}
+\setbeamercolor{math text displayed}{fg=blue}
 
 
 $if(title)$
