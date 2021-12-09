@@ -39,7 +39,8 @@ process_tangle.block <- function (x) {
 utils::assignInNamespace("process_tangle.block",
                              process_tangle.block,
                              ns="knitr")
-    
+
+if (!dir.exists("./codes")) {dir.create("./codes")}
 lapply(rmdfiles, function(x) knitr::purl(input=x, output=paste("./codes/", substr(x, 1,nchar(x)-4), ".R", sep=""), encoding="utf-8"))
 
 ##################################### purl python codes ########################################
@@ -80,9 +81,13 @@ process_tangle.block <- function (x) {
     utils::assignInNamespace("process_tangle.block",
                              process_tangle.block,
                              ns="knitr")
-    
+
 lapply(rmdfiles, function(x) knitr::purl(input=x, output=paste("./codes/", substr(x, 1,nchar(x)-4), ".py", sep=""), encoding="utf-8"))
 
-
+# 插入原始数据表格
+if(file.exists("_data.rmd")){
+if (!dir.exists("./misc")) {dir.create("./misc")}
 knitr::knit("_data.rmd", output = "./misc/data.tex")
+}
+
 rmarkdown::render_site(output_format = 'bookdown::pdf_book', encoding = 'UTF-8')
