@@ -103,10 +103,10 @@
 \RequirePackage{graphicx}                           % 支持图形
 \RequirePackage{url}                                    % 对网址进行处理
 \RequirePackage{color}                                % 颜色支持
-\RequirePackage{xcolor}
+%%\RequirePackage[monochrome]{xcolor}                  % 需要黑白打印，去掉 % 让这行生效
 \RequirePackage[ocgcolorlinks,colorlinks=true,citecolor=blue, linkcolor=blue]{hyperref}  %各种引用、书签生成
 
-% \hypersetup{hidelinks}    % 打印用黑色
+%\hypersetup{hidelinks}    % 打印用黑色，好像无效，使用上面语句
 \RequirePackage[noae]{Sweave}                  % Rnw 支持
 \setkeys{Gin}{width=0.8\textwidth}            % 更改Sweave默认图的宽度
 \RequirePackage{svn-multi}                    % 在文中加入svn属性信息
@@ -1005,7 +1005,7 @@
   numberstyle=\ttfamily\color{gray},  % the style that is used for the line-numbers,
   stepnumber=1,
   numbersep=5pt,
-  backgroundcolor=\color{white},
+%  backgroundcolor=\color{white},
   showspaces=false,
   showstringspaces=false,
   showtabs=false,
