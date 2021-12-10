@@ -142,6 +142,8 @@
 \RequirePackage[neverdecrease]{paralist}
 \RequirePackage{dcolumn}
 
+
+
 \RequirePackage{wrapfig}
 \RequirePackage{colortbl}
 \RequirePackage{pdflscape}
@@ -765,7 +767,13 @@
 \def\thu@tabular{\small\old@tabular}
 \DeclareCaptionLabelFormat{thu}{{\small\bfseries #1~\rmfamily #2}}
 \DeclareCaptionLabelSeparator{thu}{\hspace{1em}}
-\DeclareCaptionFont{thu}{\small\heiti}
+
+%% 图表标题字体
+\DeclareCaptionFont{thu}{\small\bfseries\songti}
+
+%% 表格字体大小设置
+\RequirePackage{etoolbox}
+\AtBeginEnvironment{longtabu}{\small}
 
 \renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}}
 \renewcommand{\thetable}{\thechapter-\arabic{table}}
