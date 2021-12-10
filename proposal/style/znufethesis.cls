@@ -769,11 +769,12 @@
 \DeclareCaptionLabelSeparator{thu}{\hspace{1em}}
 
 %% 图表标题字体
-\DeclareCaptionFont{thu}{\small\bfseries\songti}
+\DeclareCaptionFont{thu}{\small\heiti} %% 学校要求为加黑宋体，但丑，使用黑体
 
 %% 表格字体大小设置
 \RequirePackage{etoolbox}
 \AtBeginEnvironment{longtabu}{\small}
+\renewcommand{\arraystretch}{0.95} %% 表格行距
 
 \renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}}
 \renewcommand{\thetable}{\thechapter-\arabic{table}}
