@@ -721,7 +721,7 @@
 \renewenvironment{thebibliography}[1]{%
 
   \thispagestyle{emptypage}
-  \bibliographystyle{gbt7714-plain}              % 参考文献style
+  %\bibliographystyle{gbt7714-plain}              % 参考文献style
 
   \chapter*{\bibname}%
   \addcontentsline{toc}{chapter}{\bibname}
