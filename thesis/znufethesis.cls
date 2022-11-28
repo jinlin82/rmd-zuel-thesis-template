@@ -773,6 +773,7 @@
 %% 表格字体大小设置
 \RequirePackage{etoolbox}
 \AtBeginEnvironment{longtabu}{\small}
+\AtBeginEnvironment{longtable}{\small}
 \renewcommand{\arraystretch}{0.95} %% 表格行距
 
 \renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}}
