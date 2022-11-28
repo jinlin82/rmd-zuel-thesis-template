@@ -128,14 +128,13 @@
 \newcommand{\ud}{\,\mathrm{d}}             % 积分中的 d，前面有一个空格
 
 % -----------------Table--------------------------------------------------
-\RequirePackage{longtable}
+\RequirePackage{longtable}[=v4.13]
 \RequirePackage{booktabs}
 \RequirePackage{array}              % 提供表格中每一列的宽度及位置支持
 \RequirePackage{siunitx}
 \RequirePackage{multirow}
 \RequirePackage{rotating}
 \RequirePackage{float}
-\RequirePackage{longtable}
 \RequirePackage{tabularx}
 \setlength{\extrarowheight}{-1pt}
 \RequirePackage{slashbox}
