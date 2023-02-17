@@ -264,15 +264,35 @@ $endif$
 \usepackage{ragged2e}                      % 提供 \justifying 命令
 
 % ---------------------------------Table------------------------------
-\usepackage{longtable}[=v4.13]
-\usepackage{tabu}
-\usepackage{booktabs}
-\usepackage{array}                         % 提供表格中每一列的宽度及位置支持
-\usepackage{multirow}
-\usepackage{rotating}
+% -----------------Table--------------------------------------------------
+\RequirePackage{longtable}[=v4.13]
+\RequirePackage{booktabs}
+\RequirePackage{array}              % 提供表格中每一列的宽度及位置支持
+\RequirePackage{siunitx}
+\RequirePackage{multirow}
+\RequirePackage{rotating}
+\RequirePackage{float}
+\RequirePackage{tabularx}
+\setlength{\extrarowheight}{-1pt}
+\RequirePackage{slashbox}
+\RequirePackage[neverdecrease]{paralist}
+\RequirePackage{dcolumn}
+
+
+
+\RequirePackage{wrapfig}
+\RequirePackage{colortbl}
+\RequirePackage{pdflscape}
+\RequirePackage{pdfpages}
+\RequirePackage{tabu}
+\RequirePackage{threeparttable}
+\RequirePackage{threeparttablex}
+\RequirePackage[normalem]{ulem}
+\RequirePackage{makecell}
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+% -------------------------------------------------------------------------
 
 %\sloppy
 %\linespread{1.0}                           % 设置行距
