@@ -83,7 +83,7 @@
 6. `_bookdown.yml`是`bookdown`文档中相关字符的说明;
 7. `_outout.yml`是文档转换格式`html`,`doc`,`pdf`,`bookdown`,`beamer幻灯片` 时涉及pandoc和tex的具体设置,是配置文件;
 8. `bermer-header.tex`是生成幻灯片时,对作者,邮箱以及logo的设置;
-9. `Bibfile.bib`文件放置了用`Jabref`整理的固定格式的参考文献文本文档，`Bibfile_Pinyin.bib`作用后续作补充介绍;
+9. `Bibfile.bib`文件放置了用`Jabref`整理的固定格式的参考文献文本文档， `Bibfile_Pinyin.bib`用展示如何对中文文献按照拼音排序;
 10. `znufelogo.jpg`即生成幻灯片时的Logo。
 11. `znufethesis.cls`是用来控制论文模板的核心格式，不要动
 12. `_data.Rmd`用于设置论文中原始数据部分，`index.Rmd`用于设置论文格式，这两个文件**名称不能改变**
@@ -99,7 +99,9 @@
 5. **目录**:自动生成，不用自己写
 6. **正文**:在`01`、`02`等rmd中编辑和修改
 7. **参考文献**:通过编辑`Bibfile.bib`文件后自动生成,不用自己写,如果想实现中英文
-   排序，则要使用 `Bibfile_Pinyin.bib` 文件， 该文件的具体编写方法见实例文件
+   排序，则要按照 `Bibfile_Pinyin.bib` 文件中中文文献条目的样式重新修改
+   `Bibfile.bib` 文件中所有中文文献条目，即增加 key 项，里面填写中文文献作者的拼
+   音。 
 8. **程序代码**:展示重要程序代码。在生成pdf时，只要rmd中有的R和python代码，都会被自动提取出来放入`codes`文件夹中。需要在论文中展示的代码，在`misc`文件夹中`code.tex`中修改。R,python代码修改方式不同。
    - 展示python代码:复制下面的语句，将下面的`02-model`改为需要展示的python代码所在的章节rmd名称，如`03-estimation`
    ```
