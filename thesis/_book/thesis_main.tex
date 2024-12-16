@@ -1,0 +1,242 @@
+%\documentclass[UTF8,a4paper,12pt]{znufecls}  % Latex 去掉上面的语句，加上本语句
+\documentclass[doctor,twoside,chapterhead,otf]{znufethesis}
+% \usepackage{gbt7714}
+
+
+%======================== 根据选项设置代码处理方式 RMARKDOWN 中独有=============
+\usepackage{listings}
+
+
+
+
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcommand{\passthrough}[1]{#1}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{中南财经政法大学硕士论文Rmarkdown模板}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+
+
+  \author{Jin}
+  \preauthor{\centering\large\emph}
+  \postauthor{\par}
+
+  \predate{\centering\large\emph}
+  \postdate{\par}
+  \date{2019-04-15}
+
+
+%% ===============================================================
+\begin{document}
+\phantomsection %
+\pdfbookmark{封面}{cover}
+\IfFileExists{./misc/cover.pdf}{\includepdf[pages=-]{./misc/cover}}{
+\maketitle
+}
+
+\blankpage
+
+
+%% ========================== Frontmatters ========================
+%% -------------- 原创声明-------------
+\cleardoublepage
+\phantomsection %
+\pdfbookmark{声明}{creative}
+\input{./misc/creative}
+\blankpage
+
+%% ------------- 符号列表-------------
+\cleardoublepage
+\frontmatter
+\pagestyle{plain}
+
+\cleardoublepage
+\phantomsection %
+\pdfbookmark{\denotationname}{denotation}
+\pagenumbering{arabic}
+\input{./misc/denotation} % 如果要生成符号列表
+\ifodd\thepage
+\blankpage
+\fi
+
+%% ---------------- 摘要 -------------
+\cleardoublepage
+\frontmatter
+\input{./misc/abstract}
+\ifodd\therealpage
+\blankpage
+\fi
+
+
+%% ---------------- 目录 ------------
+{
+
+\setcounter{tocdepth}{2}
+\cleardoublepage
+\phantomsection %
+\pdfbookmark{\contentsname}{toc}
+\pagenumbering{arabic}
+\tableofcontents        % 生成目录
+
+\ifodd\thepage
+\blankpage
+\fi
+}
+
+\cleardoublepage
+\phantomsection %
+\pdfbookmark{表目录}{tabletoc}
+\listoftables           % 如果要生成表目录
+
+\ifodd\thepage
+\blankpage
+\fi
+
+\cleardoublepage
+\phantomsection %
+\pdfbookmark{图目录}{figtoc}
+\listoffigures          % 如果要生成图目录
+
+\ifodd\thepage
+\blankpage
+\fi
+%% ==========================================================
+
+\mainmatter
+\pagestyle{mpage}
+
+\cleardoublepage
+\pagestyle{emptypage}
+\renewcommand{\chapterlabel}{导论}
+
+\hypertarget{ux5bfcux8bba}{%
+\chapter*{导论}\label{ux5bfcux8bba}}
+\addcontentsline{toc}{chapter}{导论}
+
+\hypertarget{ux7814ux7a76ux80ccux666fux548cux610fux4e49}{%
+\subsection{研究背景和意义}\label{ux7814ux7a76ux80ccux666fux548cux610fux4e49}}
+
+\hypertarget{ux7814ux7a76ux80ccux666f}{%
+\subsubsection{研究背景}\label{ux7814ux7a76ux80ccux666f}}
+
+黄金兼具商品、货币以及投资属性，在国际金融市场上是一种常用的避险工具，并逐步演变为一种社会公认的价值判断标准，其资产储备和投资增值的价值远大于纸币和其他商品，其储存量也代表了国家的实力，是稳定市场经济、抵挡通胀的重要后盾\footnote{市场投资者越担忧通货膨胀的发生，黄金市场将越受青睐。例如，2008年金价创下历史新高，商品价格的上涨与通货膨胀率成正比关系，当参与者持有的现金所产生的利息无法跟上价格的上涨速度，黄金就是避风港。}，也成为大众参与者稳定资金、预防通胀的常用手段，而其他商品及货币不具有在异常时段的避险功能\citep{Baklaci2016, 王安羽2011}。
+
+\hypertarget{ux56fdux5185ux5916ux7814ux7a76ux73b0ux72b6ux8ff0ux8bc4}{%
+\subsection{国内外研究现状述评}\label{ux56fdux5185ux5916ux7814ux7a76ux73b0ux72b6ux8ff0ux8bc4}}
+
+\hypertarget{ux9ec4ux91d1ux671fux8d27ux5e02ux573aux98ceux9669ux6d4bux5ea6ux7814ux7a76ux7efcux8ff0}{%
+\subsubsection{黄金期货市场风险测度研究综述}\label{ux9ec4ux91d1ux671fux8d27ux5e02ux573aux98ceux9669ux6d4bux5ea6ux7814ux7a76ux7efcux8ff0}}
+
+1.国外关于黄金期货市场风险测度的研究现状
+
+Baklaci等人（2016）发现新兴市场仍然是一个尚未开发的领域，而大多数样本国家的黄金期货存在波动传递，新兴黄金期货市场的风险分散和跨市场对冲\footnote{当持有黄金的需求增加时，黄金价格将迎来飙升。所以，金价基本上与股票、债券市场的价格相反，黄金是一种很好的对冲工具。}机会非有限\citep{Baklaci2016}。
+
+2.国内关于黄金期货市场风险测度的研究现状
+
+由于2008年中国才推出黄金期货的市场，时间相比于比国外较晚，国内学者对此研究有一定的局限性\citep{2000Learning}，所使用模型主流为传统的GARCH族模型，模型普遍较为简单，分析方向多集中于与其他金融市场的联动分析和溢出效益等\citep{Bolstad2017}。王安羽（2011）利用GARCH族模型拟合波动性，并对GARCH类对波动率的不同模拟做优劣对比。结果证实不对称的GARCH模型为最优模型，对中国投资者的市场风险度量VaR和预测具有一定的作用\citep{王安羽2011}。
+
+\hypertarget{ux9ec4ux91d1ux671fux8d27ux5e02ux573aux53caux4ef7ux683cux6ce2ux52a8ux98ceux9669ux7814ux7a76ux57faux7840}{%
+\chapter{黄金期货市场及价格波动风险研究基础}\label{ux9ec4ux91d1ux671fux8d27ux5e02ux573aux53caux4ef7ux683cux6ce2ux52a8ux98ceux9669ux7814ux7a76ux57faux7840}}
+
+\pagestyle{mpage}
+
+\hypertarget{ux9ec4ux91d1ux671fux8d27ux5e02ux573aux98ceux9669ux7684ux5f71ux54cdux56e0ux7d20}{%
+\section{黄金期货市场风险的影响因素}\label{ux9ec4ux91d1ux671fux8d27ux5e02ux573aux98ceux9669ux7684ux5f71ux54cdux56e0ux7d20}}
+
+黄金期货市场属于金融资本交易场所，则意味着当取得投资回报时，也存在一定的市场风险。其风险大致包含市价波动、流动性、市场信用、公开操作和法律方面。从而针对不同种类的风险，就对应着不一样的影响因素。
+\[y=\beta_0 + \beta_1 x_i + u_i\]
+其中
+
+\hypertarget{ux57faux4e8e-gas-ux6a21ux578bux7684ux9ec4ux91d1ux671fux8d27ux6536ux76caux7387ux5efaux6a21}{%
+\chapter{基于 GAS 模型的黄金期货收益率建模}\label{ux57faux4e8e-gas-ux6a21ux578bux7684ux9ec4ux91d1ux671fux8d27ux6536ux76caux7387ux5efaux6a21}}
+
+\hypertarget{ux6570ux636eux6765ux6e90}{%
+\section{数据来源}\label{ux6570ux636eux6765ux6e90}}
+
+\hypertarget{ux6570ux636eux9009ux53d6ux53caux610fux4e49}{%
+\subsection{数据选取及意义}\label{ux6570ux636eux9009ux53d6ux53caux610fux4e49}}
+
+不同于国外期货的选取，以最近月份的期货合约逐日交易的收盘价为基础，因为期货合约是有生命周期的，合约在最后一个交易日将会平仓终止买卖。
+
+\hypertarget{ux57faux4e8e-gas-ux6a21ux578bux7684ux9ec4ux91d1ux671fux8d27ux5e02ux573aux98ceux9669ux6d4bux5ea6ux7814ux7a76}{%
+\chapter{基于 GAS 模型的黄金期货市场风险测度研究}\label{ux57faux4e8e-gas-ux6a21ux578bux7684ux9ec4ux91d1ux671fux8d27ux5e02ux573aux98ceux9669ux6d4bux5ea6ux7814ux7a76}}
+
+\hypertarget{ux57faux4e8e-gas-ux6a21ux578bux7684ux9ec4ux91d1ux671fux8d27ux98ceux9669ux6d4bux5ea6}{%
+\section{基于 GAS 模型的黄金期货风险测度}\label{ux57faux4e8e-gas-ux6a21ux578bux7684ux9ec4ux91d1ux671fux8d27ux98ceux9669ux6d4bux5ea6}}
+
+\hypertarget{var-ux6edaux52a8ux9884ux6d4b}{%
+\subsection{VaR 滚动预测}\label{var-ux6edaux52a8ux9884ux6d4b}}
+
+为了对同业拆借市场的利率风险进行控制，可以借助``风险价值''（Value-at-Risk，VaR）来进行准确测度。在险价值表示\passthrough{\lstinline!\_lfun!}在某个置信水平下，由于市场的正常波动，金融资产的预计最大损失，即收益率密度曲线的一个分位点。若 \(VaR>r_t\)，则说明该模型在第t天具备优良的表现，可以成功预测。
+
+\cleardoublepage
+\pagestyle{emptypage}
+\renewcommand{\chapterlabel}{结论与展望}
+
+\hypertarget{ux7ed3ux8bbaux4e0eux5c55ux671b}{%
+\chapter*{结论与展望}\label{ux7ed3ux8bbaux4e0eux5c55ux671b}}
+\addcontentsline{toc}{chapter}{结论与展望}
+
+\hypertarget{ux4e00ux7ed3ux8bba}{%
+\subsection*{一、结论}\label{ux4e00ux7ed3ux8bba}}
+\addcontentsline{toc}{subsection}{一、结论}
+
+波动性是金融时序最关键的特征之一，也是投资者和企业以及政府行使决策的关键影响因素之一。
+
+\hypertarget{ux4e8cux4e0dux8db3ux4e0eux5c55ux671b}{%
+\subsection*{二、不足与展望}\label{ux4e8cux4e0dux8db3ux4e0eux5c55ux671b}}
+\addcontentsline{toc}{subsection}{二、不足与展望}
+
+在研究过程中不可避免地存在缺陷和遗憾，有必要更进一步的研究和改进：
+
+\ifodd\thepage
+\blankpage
+\fi
+
+%% ========================= 参考文献 =======================
+\cleardoublepage
+\pagestyle{emptypage}
+\renewcommand{\chapterlabel}{\bibname}
+\bibliographystyle{./style/gbt7714-author-year-zuel}
+
+\bibliography{Bibfile}
+
+
+
+\ifodd\thepage
+\blankpage
+\fi
+
+%% ========================= Backmatters =============================
+\appendix
+\backmatter
+\cleardoublepage
+\pagestyle{appendixpage}
+\renewcommand{\chapterlabel}{\appendixname} % 设置附录的页眉
+
+%%------------ 程序代码----------------
+\input{./misc/code}
+
+\input{./misc/data}
+%% ==================================================================
+
+%%---------------- 致谢 ---------------
+\cleardoublepage
+\renewcommand{\chapterlabel}{\ackname} % 设置致谢参考文献的页眉
+\input{./misc/ack}
+
+
+
+\end{document}

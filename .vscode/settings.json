@@ -1,0 +1,4 @@
+{
+    "window.title": "${dirty}${separator}${rootPath} ${separator} ${activeEditorMedium}${separator}[Branch: master]",
+    "gitdoc.enabled": false
+}
